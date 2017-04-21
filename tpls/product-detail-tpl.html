@@ -1,0 +1,54 @@
+<div class="info-box detail-box" ng-controller="ProductDetailController">
+	<detail-bread-nav-divider></detail-bread-nav-divider>
+
+	<div class="detail-info-part">
+		<div class="show-img" ng-style="imgStyle"></div>
+		<div class="description-part">
+			<p ng-repeat="item in productData.description.split('.')">{{item}}</p>
+		</div>
+		<hr class="part-divider"></hr>
+		<div class="tech-specs-part">
+			<h3>Tech Specs</h3>
+			<div class="tech-specs-detail">
+				<div class="price-part row">
+					<!-- <span class="detail-title">Price</span>
+					<span class="detail-data">10000</span> -->
+					<div class="detail-title col-md-4">Price</div>
+					<div class="detail-data col-md-8">{{productData.price | currency: 'RMB'}}</div>
+				</div>
+
+				<hr class="part-divider"></hr>
+				
+				<div class="size-weight-part row">
+					<span class="detail-title col-md-4">Size and Weight</span>
+					<span class="detail-data col-md-8">
+						<ul>
+							<!-- <li>Height: 17.7 inches (45.0 cm)</li>
+							<li>Width: 20.8 inches (52.8 cm)</li>
+							<li>Stand depth: 6.9 inches (17.5 cm)</li>
+							<li>Weight: 12.5 pounds (5.68 kg)</li> -->
+							<li ng-repeat="item in productData.techspecs.sizeweight">{{item.content}}</li>
+						</ul>
+					</span>
+				</div>
+				
+				<hr class="part-divider"></hr>
+				
+				<div class="in-the-box-part row">
+					<span class="detail-title col-md-4">In the box</span>
+					<span class="detail-data col-md-8">
+						<ul>
+							<li ng-repeat="item in productData.techspecs.inthebox">{{item.content}}</li>
+							<!-- <li>21.5‑inch iMac or 21.5‑inch iMac with Retina 4K display</li>
+							<li>Magic Keyboard</li>
+							<li>Magic Mouse 2</li>
+							<li>Power cord</li>
+							<li>Lightning to USB Cable</li> -->
+						</ul>
+					</span>
+				</div>
+			</div>
+			
+		</div>	
+	</div>
+</div>	

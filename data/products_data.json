@@ -1,0 +1,252 @@
+[{
+	"_id": "1",
+	"name": "Macbook",
+	"price": 9888,
+	"quantity": 100,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/macbook/macbook_macbook.png",
+	"description": "When you open the MacBook, brilliant 12 inch Retina screen, with no side glass, make everything seem very The brightness dazzles the eyes. Photos like vividly screen, delicate and vivid, lucidity. More than 3 million pixels, so that each text is clear sharp. All of these are present in the Mac computer ever on the Retina screen slim, and the minimalist design beyond imagination in create stunning visual experience",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 0.14–0.52 inch (0.35–1.31 cm)"}, {"content": "Width: 11.04 inches (28.05 cm)"}, {"content": "Depth: 7.74 inches (19.65 cm)"}, {"content": "Weight: 2.03 pounds (0.92 kg)"}],
+		"inthebox": [{"content": "MacBook"}, {"content": "29W USBC Power Adapter"}, {"content": "USBC Charge Cable (2 m)"}]
+	}
+},
+{
+	"_id": "2",
+	"name": "Macbook Pro",
+	"price": 13888,
+	"quantity": 300,	
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/macbook/macbook_macbookpro.png",
+	"description": "The introduction of a new generation of MacBook Pro, the laptop's performance and portability to a new height. No matter how big your target is, its powerful graphics processor, high performance CPU, advanced storage devices. And a number of powerful configurations can help you speed up creative ideas",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 0.61 inch (1.55 cm)"}, {"content": "Width: 13.75 inches (34.93 cm)"}, {"content": "Depth: 9.48 inches (24.07 cm)"}, {"content": "Weight: 4.02 pounds (1.83 kg)"}],
+		"inthebox": [{"content": "15inch MacBook Pro"}, {"content": "87W USBC Power Adapter"}, {"content": "USBC Charge Cable (2 m)"}]
+	}
+},
+{
+	"_id": "3",
+	"name": "Macbook Air",
+	"price": 8488,
+	"quantity": 300,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/macbook/macbook_macbookair.png",
+	"description": "MacBook Air charge can run up to 12 hours a day, really amazing endurance. So, from the first cup of coffee in the morning until you get to work, you don't need to plug in to work. At the same time, its standby time up to 30 days, so that even if you will be idle for several weeks, after returning from the last stop to continue to use",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 0.110.68 inch (0.31.7 cm)"}, {"content": "Width: 12.8 inches (32.5 cm)"}, {"content": "Depth: 8.94 inches (22.7 cm)"}, {"content": "Weight: 2.96 pounds (1.35 kg)"}],
+		"inthebox": [{"content": "MacBook Air"}, {"content": "Power adapter"}, {"content": "AC wall plug"}, {"content": "Power cord"}]
+	}
+},
+{
+	"_id": "4",
+	"name": "iMac",
+	"price": 10988,
+	"quantity": 500,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/macbook/macbook_imac.jpg",
+	"description": "The idea behind iMac has never wavered: to craft the ultimate desktop experience. The best display, paired with highperformance processors, graphics, and storage — all within an incredibly thin, seamless enclosure. And that commitment continues with the allnew 25‑inch iMac with Retina 4K display. Like the revolutionary 27‑inch 5K model, it delivers such spectacular image quality that everything else around you seems to disappear. Adding up to the most immersive iMac experience yet — and another big, beautiful step forward",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 17.7 inches (45.0 cm)"}, {"content": "Width: 20.8 inches (52.8 cm)"}, {"content": "Stand depth: 6.9 inches (17.5 cm)"}, {"content": "Weight: 12.5 pounds (5.68 kg)"}],
+		"inthebox": [{"content": "21.5‑inch iMac or 21.5‑inch iMac with Retina 4K display"}, {"content": "Magic Keyboard"}, {"content": "Magic Mouse 2"}, {"content": "Power cord"}, {"content": "Lightning to USB Cable"}]
+	}
+},
+{
+	"_id": "5",
+	"name": "Ipad Pro",
+	"price": 4388,
+	"quantity": 100,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/ipad/ipad_pro.jpg",
+	"description": "iPad Pro is more than the next generation of iPad — it’s an uncompromising vision of personal computing for the modern world. It puts incredible power that leaps past most portable PCs at your fingertips. It makes even complex work as natural as touching, swiping, or writing with a pencil. And whether you choose the 12-inch model or the new 9-inch model, iPad Pro is more capable, versatile, and portable than anything that’s come before. In a word, super",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 9.4 inches"}, {"content": "Width: 6.6 inches"}, {"content": "Weight: Wi‑Fi models 0.96 pound (437 grams)"}, {"content": "Weight: Cellular models 0.98 pound (444 grams)"}],
+		"inthebox": [{"content": "iPad Pro"}, {"content": "Lightning to USB Cable"}, {"content": "USB Power Adapter"}]
+	}
+},
+{
+	"_id": "6",
+	"name": "Ipad Air2",
+	"price": 3388,
+	"quantity": 200,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/ipad/ipad_air.png",
+	"description": "IPad Air 2 not only thin a lot, but also more powerful. Compared with the previous generation, we design the A8X chip in the central processor and graphics processor performance are significantly improved. In fact, by virtue of the 64 desktop computer architecture, iPad Air 2 has a powerful performance has been leaps and bounds. Not only that, it is also very good energy efficiency, up to 10 hours of battery life, to meet your daily work, entertainment, browse the Internet and shopping",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 9.4 inches (240 mm)"}, {"content": "Width: 6.6 inches (169.5 mm)"}, {"content": "Depth: 0.24 inch (6.1 mm)"}, {"content": "Weight: 0.96 pound (437 g)"}],
+		"inthebox": [{"content": "iPad Air 2"}, {"content": "Lightning to USB Cable"}, {"content": "USB Power Adapter"}]
+	}
+},
+{
+	"_id": "7",
+	"name": "Ipad Mini4",
+	"price": 3488,
+	"quantity": 250,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/ipad/ipad_mini.jpg",
+	"description": "There’s more to mini than meets the eye. The new iPad mini 4 puts uncompromising performance and potential in your hand. It’s thinner and lighter than ever before, yet powerful enough to help you take your ideas even further",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 9.4 inches (240 mm)"}, {"content": "Width: 6.6 inches (169.5 mm)"}, {"content": "Depth: 0.24 inch (6.1 mm)"}, {"content": "Weight: 0.96 pound (437 g)"}],
+		"inthebox": [{"content": "iPad Mini 4"}, {"content": "Lightning to USB Cable"}, {"content": "USB Power Adapter"}]
+	}
+},
+{
+	"_id": "8",
+	"name": "iPhone 7",
+	"price": 6488,
+	"quantity": 270,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/iphone/iphone_7.png",
+	"description": "iPhone 7 dramatically improves the most important aspects of the iPhone experience. It introduces advanced new camera systems. The best performance and battery life ever in an iPhone. Immersive stereo speakers. The brightest, most colorful iPhone display. Splash and water resistance.1 And it looks every bit as powerful as it is. This is iPhone 7",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 5.44 inches (138.3 mm)"}, {"content": "Width: 5.44 inches (138.3 mm)2.64 inches (67.1 mm)"}, {"content": "Depth: 0.28 inch (7.1 mm)"}, {"content": "Weight: 4.87 ounces (138 grams)"}],
+		"inthebox": [{"content": "iPhone with iOS 10"}, {"content": "EarPods with Lightning Connector"}, {"content": "Lightning to 3.5 mm Headphone Jack Adapter"}, {"content": "Lightning to USB Cable"}, {"content": "USB Power Adapter"}, {"content": "Documentation"}]
+	}
+},
+{
+	"_id": "8",
+	"name": "iPhone 6s",
+	"price": 5488,
+	"quantity": 290,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/iphone/iphone_6s.jpg",
+	"description": "The only thing that's changed is everything。A breakthrough design.Pushed even further.An experience unlike any other.On a phone unlike any other",
+	"techspecs": {
+		"sizeweight": [{"content": "Height: 9.4 inches (240 mm)"}, {"content": "Width: 4.7 inches (169.5 mm)"}, {"content": "Depth: 0.24 inch (6.1 mm)"}, {"content": "Weight: 0.96 pound (437 g)"}],
+		"inthebox": [{"content": "EarPods with 3.5 mm Headphone Plug"}, {"content": "iPhone 6s"}, {"content": "5W USB Power Adapter"}, {"content": "Lightning to USB Cable"}]
+	}
+},
+{
+	"_id": "9",
+	"name": "Apple Watch series 2",
+	"price": 2888,
+	"quantity": 520,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/iwatch/iwatch_serise2.jpg",
+	"description": "Built-in GPS. Water resistance to 50 meters.1 A new lightning-fast dual-core processor. And a display that’s two times brighter than before. Full of features that help you stay active, motivated, and connected, Apple Watch Series 2 is designed for all the ways you move",
+	"techspecs": {
+		"sizeweight": [{"content": "Resolving power: 312 * 390"}],
+		"inthebox": [{"content": "Apple Watch serise2"}]
+	}
+},
+{
+	"_id": "10",
+	"name": "Apple Watch series 1",
+	"price": 2188,
+	"quantity": 150,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/iwatch/iwatch_serise1.jpg",
+	"description": "Track and share your activity. Measure your workouts. Monitor your health. And stay connected to the people and information you care about most. Now you can do it all even faster than before, thanks to a new dual-core processor. Introducing Apple Watch Series 1. Starting at $269",
+	"techspecs": {
+		"sizeweight": [{"content": "Resolving power: 302 * 380"}],
+		"inthebox": [{"content": "Apple Watch serise1"}]
+	}
+},
+{
+	"_id": "11",
+	"name": "Apple Watch Nike +",
+	"price": 2888,
+	"quantity": 180,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/iwatch/iwatch_nike.jpg",
+	"description": "Motivation in motion. Pure and simple fun. Apple Watch Nike+ is the latest in a long-running partnership between two of the world’s most innovative brands. From leading-edge comfort to the way it connects you to your running buddies through the Nike+ Run Club, it’s your perfect running partner — on your wrist",
+	"techspecs": {
+		"sizeweight": [{"content": "Resolving power: 312 * 390"}],
+		"inthebox": [{"content": "Apple Watch Nike +"}]
+	}
+},
+{
+	"_id": "12",
+	"name": "Apple Watch Hermès",
+	"price": 3888,
+	"quantity": 120,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/iwatch/iwatch_hermes.jpg",
+	"description": "The culmination of a partnership based on parallel thinking, singular vision. And mutual regard, Apple Watch Hermès is a unique timepiece designed with both utility and beauty in mind. The latest collection features finely handcrafted leather bands from Hermès. And Apple-designed watch faces based on the iconic Clipper, Cape Cod, and Espace Hermès watches. Its artful simplicity makes Apple Watch Hermès the ultimate tool for modern life — and an elegant way to live a better day",
+	"techspecs": {
+		"sizeweight": [{"content": "Resolving power: 312 * 390"}],
+		"inthebox": [{"content": "Apple Watch Hermès"}]
+	}
+},
+{
+	"_id": "13",
+	"name": "Apple Watch Edition",
+	"price": 2988,
+	"quantity": 100,
+	"measurement": "a set",
+	"packages": [
+		{"content": "Orders more than 5 units to reduce the amount of RMB 500"},
+		{"content": "Orders more than 50 units to reduce the amount of  RMB6000"},
+		{"content": "Number of orders more than 500 units hit less than 5% off"}
+	],
+	"img": "img/iwatch/iwatch_edition.jpg",
+	"description": "Apple Watch Edition has been reimagined in brilliant white ceramic, engineered to be as strong as it is beautiful. With all the great features of Apple Watch Series 2, it’s the next generation of a timepiece that knows no equal",
+	"techspecs": {
+		"sizeweight": [{"content": "Resolving power: 312 * 390"}],
+		"inthebox": [{"content": "Apple Watch Edition"}]
+	}
+}]

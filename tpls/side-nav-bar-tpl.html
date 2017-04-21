@@ -1,0 +1,42 @@
+<div class="side-nav-bar">
+	<ul class="nav nav-pills nav-stacked">
+		<!-- <li ng-repeat="link in links" class="nav-item" ng-click="linkToFn(link)" ng-class="{active: activeLink == link}">
+			<a ng-href="#/{{link}}">{{link[0].toUpperCase() + link.substring(1)}}</a>
+			<span class="nav-arrow" ng-show="activeLink == link"></span>
+		</li> -->
+		
+		<li class="nav-item" ng-click="linkToFn('index')" ng-class="{active: activeLink == 'index'}">
+			<a ng-href="#index"><span class="glyphicon glyphicon-dashboard"></span>&nbsp;&nbsp;&nbsp;Dashboard & Analysis</a>
+			<span class="nav-arrow" ng-show="activeLink == 'index'"></span>
+		</li>
+		<li class="nav-item" ng-click="linkToFn('products')" ng-class="{active: activeLink == 'products'}">
+			<a ng-href="#products">
+				<span class="glyphicon glyphicon-th-list"></span>
+				&nbsp;&nbsp;&nbsp;Products
+				<span class="label">{{productsNum}}</span>
+			</a>
+			<span class="nav-arrow" ng-show="activeLink == 'products'"></span>
+		</li>
+		<li class="nav-item" ng-click="linkToFn('orders')" ng-class="{active: activeLink == 'orders'}">
+			<a ng-href="#orders">
+				<span class="glyphicon glyphicon-calendar"></span>
+				&nbsp;&nbsp;&nbsp;Orders
+				<span class="label">{{ordersNum}}</span>
+			</a>
+			<span class="nav-arrow" ng-show="activeLink == 'orders'"></span>
+		</li>
+		<li class="nav-item" ng-click="linkToFn('logistical')" ng-class="{active: activeLink == 'logistical'}">
+			<a ng-href="#logistical"><span class="glyphicon glyphicon-plane"></span>
+			&nbsp;&nbsp;&nbsp;Logistics
+			<span class="label">{{logisticalNum}}</span></a>
+			<span class="nav-arrow" ng-show="activeLink == 'logistical'"></span>
+		</li>
+		<!-- <li class="nav-item" ng-click="linkToFn('analysis')" ng-class="{active: activeLink == 'analysis'}">
+			<a ng-href="#analysis"><span class="glyphicon glyphicon-stats"></span>&nbsp;&nbsp;&nbsp;Data And Analysis</a>
+			<span class="nav-arrow" ng-show="activeLink == 'analysis'"></span>
+		</li> -->
+
+
+	</ul>
+</div>
+

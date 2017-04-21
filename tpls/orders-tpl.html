@@ -1,0 +1,121 @@
+<div class="info-box">
+	<bread-nav-divider content="Orders"></bread-nav-divider>
+
+	<div class="info-box-main-part" ng-controller="OrdersListController">
+		<div class="modal fade" id="timePicker">
+		  <div class="modal-dialog" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" style="color: #333">Select Time Interval</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -5px;">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body">
+		      	<div class="row">
+		      		<div class="col-md-2">
+		      			<label>Form</label>
+		      		</div>
+		      		<div class="col-md-4">
+		      			<select class="custom-select form-control" class="time-picker-pre-year" ng-model="timePreYear">
+						  <option selected>Select Year</option>
+						  <option value="2016">2016</option>
+						  <option value="2017">2017</option>
+						</select>
+		      		</div>
+		      		<div class="col-md-4">
+		      			<select class="custom-select form-control" class="time-picker-pre-month" ng-model="timePreMon">
+						  <option selected>Select Month</option>
+						  <option ng-repeat="time in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" value="{{$index + 1}}" >{{time}}</option>
+						</select>
+		      		</div>
+		      	</div>
+		      	<div class="row" style="margin-top: 20px;">
+		      		<div class="col-md-2">
+		      			<label>To</label>
+		      		</div>
+		      		<div class="col-md-4">
+		      			<select class="custom-select form-control" class="time-picker-next-year" ng-model="timeNextYear">
+						  <option selected>Select Year</option>
+						  <option value="2016">2016</option>
+						  <option value="2017">2017</option>
+						</select>
+		      		</div>
+		      		<div class="col-md-4">
+		      			<select class="custom-select form-control" class="time-picker-next-month" ng-model="timeNextMon">
+						  <option selected>Select Month</option>
+						  <option ng-repeat="time in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]" value="{{$index + 1}}" >{{time}}</option>
+						</select>
+		      		</div>
+		      	</div>
+		      </div>
+		      <div class="modal-footer">
+		      	<button type="button" class="btn btn-default" ng-click="toShowAll()">Show All</button>
+		        <button type="button" class="btn" ng-click="toPick()">Yes</button>
+		        <button type="button" class="btn btn-default" data-dismiss="modal">No</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<p>Orders list:</p>
+		<div class="row">
+			<div class="col-md-2">
+				<button class="btn btn-default form-control" ng-click="showTimePicker()">Select time interval</button>
+			</div>
+			<div class="col-md-10">
+				<input type="text" class="form-control" placeholder="search & filter" ng-model="search">
+			</div>
+		</div>
+		<table class="table table-striped table-hover table-bordered orders-list-table">
+			<thead class="thead-inverse">
+				<tr>
+					<th>#</th>
+					<th>Order's owner</th>
+					<th ng-click="orderByFn('total')">
+						Total
+						<span class="order-up-arrow glyphicon glyphicon-arrow-up" ng-show="orderProperty == 'total' && isOrderReverse"></span>
+						<span class="order-up-arrow glyphicon glyphicon-arrow-down" ng-show="orderProperty == 'total' && !isOrderReverse"></span>
+					</th>
+					<th>Order information</th>
+					<th ng-click="orderByFn('_id')">
+						Order Id
+						<span class="order-up-arrow glyphicon glyphicon-arrow-up" ng-show="orderProperty == '_id' && isOrderReverse"></span>
+						<span class="order-up-arrow glyphicon glyphicon-arrow-down" ng-show="orderProperty == '_id' && !isOrderReverse"></span></th>
+					<th ng-click="orderByFn('time')">
+						Time
+						<span class="order-up-arrow glyphicon glyphicon-arrow-up" ng-show="orderProperty == 'time' && isOrderReverse"></span>
+						<span class="order-up-arrow glyphicon glyphicon-arrow-down" ng-show="orderProperty == 'time' && !isOrderReverse"></span>
+					</th>
+					<th>Operations</th>
+				</tr>
+			</thead>
+			<tbody>
+				<!-- <tr ng-repeat="item in ordersList.slice(currentIndex * 7, (currentIndex + 1) * 7) | filter: search"> -->
+				<tr ng-repeat="item in ordersList | filter: search | orderBy: orderListOrder">
+					<td>{{$index + 1}}</td>
+					<td>{{item.owner}}</td>
+					<td>{{item.total | currency:'RMB '}}</td>
+					<td class="no-padding-td" style="max-width: 400px;">
+						<div class="table-cell-limit-box">
+							<p ng-repeat="product in item.content">{{product.productName + ' * ' + product.quantity + '; &nbsp;'}}</p>
+						</div>
+					</td>
+					<td>{{item._id}}</td>
+					<td>{{item.time}}</td>
+					<td class="operations-box">
+						<a ui-sref="orderDetail({id: item._id})" class="btn btn-sm btn-default">info</a>
+						<a ui-sref="orderUpdate({id: item._id})" class="btn btn-sm btn-default">update</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<!-- <div class="btn-group">
+			<button class="btn btn-default" ng-click="toFirstPage()">First Page</button>
+				<button ng-repeat="item in buttonArray" class="btn" ng-click="toCurrentIndex($index)" ng-class="{'btn-default': $index != currentIndex}">{{item + 1}}</button>
+			<button class="btn btn-default fir-btn" ng-click="toLastPage()">Last Page</button>
+		</div> -->
+	</div>
+
+
+</div>

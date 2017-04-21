@@ -1,0 +1,45 @@
+<div class="info-box detail-box" ng-controller="OrderDetailController">
+	<order-bread-nav-divider></order-bread-nav-divider>
+	
+	<div class="detail-part order-detail-part">
+		<div class="order-detail-info-part row">
+			<div class="col-md-4">Owner</div>
+			<div class="col-md-8">{{orderData.owner}}</div>
+		</div>
+		<hr class="part-divider"></hr>
+
+		<div class="order-detail-info-part row">
+			<div class="col-md-4">Order Time</div>
+			<div class="col-md-8">{{orderData.time}}</div>
+		</div>
+		<hr class="part-divider"></hr>
+
+		<div class="order-detail-info-part row">
+			<div class="col-md-4">Order Id</div>
+			<div class="col-md-8">{{orderData.id}}</div>
+		</div>
+		<hr class="part-divider"></hr>
+
+		<div class="order-detail-info-part row">
+			<div class="col-md-4">Total Price</div>
+			<div class="col-md-8">{{orderData.total | currency: 'RMB '}}</div>
+		</div>
+		<hr class="part-divider"></hr>
+
+		<div class="order-detail-info-part row">
+			<div class="col-md-4">Order Content</div>
+			<div class="col-md-8">
+				<ul>
+					<!-- <li ng-repeat="item in orderData.content">{{item.productName + ' * ' + item.quantity + '&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;RMB ' + item.productPrice}}</li>
+					<li> -->
+					<li ng-repeat="item in orderData.content">
+						<div class="row">
+							<span class="col-md-7">{{item.productName + ' * ' + item.quantity}}</span>
+							<span class="col-md-5">{{item.productPrice * item.quantity | currency: 'RMB '}}</span>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>

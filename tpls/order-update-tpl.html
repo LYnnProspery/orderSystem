@@ -1,0 +1,59 @@
+<div class="info-box update-box" ng-controller="OrderUpdateController"> 
+	<order-bread-nav-divider></order-bread-nav-divider>
+
+	<form class="update-form" name="updateForm" novalidate>
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Owner</label>
+			<div class="col-md-7">
+				<input type="text" id="update-order-name" class="form-control" ng-model="orderData.owner" name="owner" required>
+				<span class="form-error-alert" ng-show="updateForm.owner.$dirty && updateForm.owner.$invalid">
+					<span>Owner's name can't be empty</span>
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Order Time</label>
+			<div class="col-md-7">
+				<input type="text" id="update-order-name" class="form-control" ng-model="orderData.time" name="time" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Total</label>
+			<div class="col-md-7 order-total-part">
+				{{orderData.total | currency: 'RMB '}}
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Content</label>
+			<div class="col-md-7 order-total-part">
+				<ul>
+					<li ng-repeat="item in orderData.content">
+						<div class="row">
+							<span class="col-md-4 order-update-product-name-part">{{item.productName}}</span>
+							<span class="col-md-4">
+								<div class="col-md-5 order-update-product-num-part">
+									<input name="productNum" class="form-control" ng-model="item.quantity" class="order-update-product-num" style="text-align: center;padding:0" ng-maxlength="10" type="number">
+								</div>
+							</span>
+							<span class="col-md-4 order-update-product-total-part">{{item.productPrice * item.quantity | currency: 'RMB '}}</span>
+							<hr class="part-divider"></hr>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</div> 
+		
+		<div class="form-gourp row">
+			<div class="col-md-3"></div>
+			<div class="col-md-7">
+				<button class="btn btn-default pull-right" ng-click="submitFn()" ng-disabled="updateForm.owner.$invalid">Submit</button>
+			</div>
+		</div>
+
+
+	</form>
+
+</div>

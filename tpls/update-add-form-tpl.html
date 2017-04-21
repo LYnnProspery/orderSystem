@@ -1,0 +1,155 @@
+<form class="update-form" name="updateForm" novalidate>
+	
+	<confirm-update></confirm-update>
+	<confirm-add></confirm-add>
+
+
+
+	<confirm-modal title="Warning" content="Are your sure to delete this?" modalid="deleteUpdateInfo" datapart="deletePartInfo" index="{{deleteIndex}}"></confirm-modal>
+	<div class="form-group row">
+		<label class="col-md-3 col-form-label" for="update-product-name">Product Name</label>
+		<div class="col-md-7">
+			<input type="text" id="update-product-name" class="form-control" ng-model="productData.name" name="name" required>
+			<span class="form-error-alert" ng-show="updateForm.name.$dirty && updateForm.name.$invalid">
+				<span>Product's name can't be empty</span>
+			</span>
+		</div>
+
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-md-3 col-form-label" for="update-product-price">Price</label>
+		<div class="col-md-3">
+			<input type="text" id="update-product-price" class="form-control" ng-model="productData.price" name="price" required>
+			<span class="form-error-alert" ng-show="updateForm.price.$dirty && updateForm.price.$invalid">
+				<span>Product's price can't be empty</span>
+			</span>
+		</div>
+		<div class="col-md-2 rmb-tag">{{productData.price | currency: 'RMB'}}</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-md-3 col-form-label" for="update-product-quantity">Quantity</label>
+		<div class="col-md-3">
+			<input type="text" id="update-product-quantity" class="form-control" ng-model="productData.quantity" name="quantity" required>
+			<span class="form-error-alert" ng-show="updateForm.quantity.$dirty && updateForm.quantity.$invalid">
+				<span>Product's quantity can't be empty</span>
+			</span>
+		</div>
+		<div class="col-md-6 rmb-tag">{{productData.quantity}}<span ng-show="productData.quantity != undefined"> sets of '{{productData.name}}'</span></div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-md-3 col-form-label" for="update-product-measurement">Measurement</label>
+		<div class="col-md-3">
+			<input type="text" id="update-product-measurement" class="form-control" ng-model="productData.measurement" name="measurement" required>
+			<span class="form-error-alert" ng-show="updateForm.measurement.$dirty && updateForm.measurement.$invalid">
+				<span>Product's measurement can't be empty</span>
+			</span>
+		</div>
+	</div>
+
+	<div class="form-group row update-form-packages-part">
+		<label class="col-md-3 col-form-label">Package(s)</label>
+		<div class="col-md-7 product-packages-part">
+			<!-- Ng-repeat  添加 在数组中 加空值-->
+			<span class="form-error-alert" ng-show="productData.packages.length == 0">
+				<span>Information can't be empty</span>
+			</span>
+			<div ng-repeat="item in productData.packages" class="product-packages-control-box">
+				<input  type="text" class="form-control" ng-model="item.content" name="package" required>
+				<span class="glyphicon glyphicon-remove remove-package-button" ng-click="removeFn('package', $index)"></span>
+				<span class="form-error-alert" ng-show="item.content.trim().length == 0 || item.content.trim() == undefined">
+					<span>Package can't be empty</span>
+				</span>
+
+
+			</div>
+			<button class="btn btn-default" ng-click="addPackageFn()">Add package</button>
+		</div>
+	</div>
+
+	<div class="form-group row">
+		<label class="col-md-3 col-form-label" for="update-product-description">Description</label>
+		<div class="col-md-7">
+			<!-- Ng-repeat  添加 在数组中 加空值-->
+			<!-- <input type="text" id="update-product-description" class="form-control" ng-model="description"> -->
+			<textarea id="update-product-description" class="form-control" ng-model="productData.description" rows="5" name="description" required></textarea>
+			<span class="form-error-alert" ng-show="updateForm.description.$dirty && updateForm.description.$invalid">
+				<span>Product's description can't be empty</span>
+			</span>
+		</div>
+	</div>
+	
+	<div class="form-group row">
+		<label class="col-md-3 col-form-label" for="update-product-img">Picture Address</label>
+		<div class="col-md-7">
+			<input type="text" id="update-product-img" class="form-control" ng-model="productData.img" name="img" required>
+			<span class="form-error-alert" ng-show="updateForm.img.$dirty && updateForm.img.$invalid">
+				<span>Product's picture address can't be empty</span>
+			</span>
+		</div>
+	</div>
+	<hr class="update-part-divider"></hr>
+	<h3>Tech Specs</h3>
+	<div class="form-group row update-form-sizeweight-part">
+		<label class="col-md-3 col-form-label">Size and Weight</label>
+		<div class="col-md-7 product-packages-part">
+			<!-- Ng-repeat  添加 在数组中 加空值-->
+			<span class="form-error-alert" ng-show="productData.techspecs.sizeweight.length == 0">
+				<span>Information can't be empty</span>
+			</span>
+			<div ng-repeat="item in productData.techspecs.sizeweight" class="product-packages-control-box">
+				<input  type="text"  class="form-control" ng-model="item.content" name="sizeweight" required>
+				<span class="glyphicon glyphicon-remove remove-package-button" ng-click="removeFn('sizeweight', $index)"></span>
+				<!-- {{item.content.trim().length }}
+				{{ item.content.trim() == undefined}} -->
+				<span class="form-error-alert" ng-show="item.content.trim().length == 0 || item.content.trim() == undefined">
+					<span>Information can't be empty</span>
+				</span>
+				
+			</div>
+			<button class="btn btn-default" ng-click="addInfoFn()">Add Info</button>
+		</div>
+	</div>
+
+	<div class="form-group row update-form-inthebox-part">
+		<label class="col-md-3 col-form-label">In the box</label>
+		<div class="col-md-7 product-packages-part">
+			<!-- Ng-repeat  添加 在数组中 加空值-->
+			<!-- {{productData.techspecs.inthebox}} -->
+			<span class="form-error-alert" ng-show="productData.techspecs.inthebox.length == 0">
+				<span>Information can't be empty</span>
+			</span>
+			<div ng-repeat="item in productData.techspecs.inthebox" class="product-packages-control-box">
+				<input  type="text"  class="form-control" ng-model="item.content" name="inthebox" required>
+				<span class="glyphicon glyphicon-remove remove-package-button" ng-click="removeFn('inthebox', $index)"></span>
+				<span class="form-error-alert" ng-show="item.content.trim().length == 0 || item.content.trim() == undefined">
+					<span>Information can't be empty</span>
+				</span>
+			</div>
+			<button class="btn btn-default" ng-click="addThingsFn()">Add things</button>
+		</div>
+	</div>
+	<hr class="update-part-divider"></hr>
+	<div class="form-group row submit-part">
+		<div class="col-md-3"></div>
+		<div class="col-md-7">
+			<button class="btn btn-default pull-right" ng-click="submitFormFn()"
+			ng-disabled="
+			updateForm.name.$invalid ||
+			updateForm.sizeweight.$invalid ||
+			updateForm.package.$invalid ||
+			updateForm.inthebox.$invalid ||
+			updateForm.description.$invalid ||
+			updateForm.price.$invalid ||
+			updateForm.quantity.$invalid ||
+			updateForm.measurement.$invalid ||
+			updateForm.img.$invalid ||
+			productData.techspecs.inthebox.length == 0 ||
+			productData.techspecs.sizeweight.length == 0 ||
+			productData.packages.length == 0
+			">submit</button>
+		</div>
+	</div>
+</form>

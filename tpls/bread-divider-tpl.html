@@ -1,0 +1,11 @@
+<div>
+	<h3>{{title}}</h3>
+
+	<div class="bread-nav-divider">
+		<!-- <span class="glyphicon glyphicon-home"></span> -->
+		<a ng-href="#index" class="link-to-home" ng-click="toHomeFn()"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+		<span class="glyphicon glyphicon-menu-right" style="top: 2px;"></span>
+		<a ng-href="#{{title[0].toLowerCase() + title.substr(1)}}" class="bread-nav-middle">{{title}}</a>
+
+	</div>
+</div>

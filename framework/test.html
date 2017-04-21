@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<table id="abc">
+		<thead>
+			<th>
+				<td>name</td>
+				<td>age</td>
+			</th>
+		</thead>
+		<tbody>
+			<tr>
+				<td>abc</td>
+				<td>123</td>
+			</tr>
+			<tr>
+				<td>abcd</td>
+				<td>1234</td>
+			</tr>
+		</tbody>
+	</table>
+<script type="text/javascript" src="jquery-1.12.3.min.js"></script>
+<script type="text/javascript" src="tableExport.jquery.plugin-master/tableExport.js"></script>
+<script type="text/javascript" src="tableExport.jquery.plugin-master/jquery.base64.js"></script>
+<script type="text/javascript">
+	// function exportToExcel(filename, targetData) {
+	// 	return alasql('SELECT * INTO XLSX("' + filename + '.xlsx", {headers:true} FROM ?', [targetData]);
+	// }
+	// var arr = [{'name': 'abc'}, {'name': '123'}];
+	// exportToExcel('123', arr);
+	$(function() {
+		console.log('1');
+		$('#abc').tableExport({type: 'excel', escape: 'false'});
+		console.log('2');
+	});
+</script>
+</body>
+</html>

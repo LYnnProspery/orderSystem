@@ -1,0 +1,45 @@
+<div class="modal fade" id="addLogistic">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Add Logistic Informaiton</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -5px;">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+          <form name="addLogisticForm" novalidate>
+            <div class="alert alert-danger" role="alert" ng-show="hasSame">
+              <strong>Warning</strong> Please check again, orders' id can't be same
+            </div>
+            <div class="row form-group">
+              <div class="col-md-10">
+                <div ng-repeat="item in newLogisticArr" style="position: relative;" class="row">
+                  <label class="col-md-1">{{'#' + ($index + 1)}}</label>
+                  <div class="col-md-11">
+                    <input type="text" class="form-control add-logistical-info-input" ng-model="item.content" placeholder="Input The Order ID" name="info" required>
+                    <span class="glyphicon glyphicon-remove remove-package-button" ng-click="removeFn($index)"></span>
+                    <span class="form-error-alert" ng-show="item.content.trim().length == 0 || item.content.trim() == undefined">
+                      <span>Order ID can't be empty</span>
+                    </span>
+                    <span class="form-error-alert" ng-show="isExist && isExistIndex === $index">
+                      <span>Order ID is already exist</span>
+                    </span>
+                     <span class="form-error-alert" ng-show="!hasOrder && !item.hasOrderId">
+                      <span>Order ID is not exist</span>
+                    </span>
+                  </div>
+                  
+                </div>
+              </div>
+            </div>
+          </form>
+        <button class="btn btn-default" ng-click="toAddFn()">Add More</button>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" ng-disabled="addLogisticForm.info.$invalid || hasSame || isExist || !hasOrder" ng-click="submitFn()">Submit</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,76 @@
+<div class="info-box update-box" ng-controller="LogisticalUpdateController"> 
+	<logistical-bread-nav-divider></logistical-bread-nav-divider>
+
+	<form class="update-form" name="updateForm" novalidate>
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Owner</label>
+			<div class="col-md-7">
+				<input type="text" id="update-logistical-name" class="form-control" ng-model="logisticalData.owner" name="owner" required>
+				<span class="form-error-alert" ng-show="updateForm.owner.$invalid">
+					<span>Name can't be empty</span>
+				</span>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Owner's TEL</label>
+			<div class="col-md-7">
+				<input type="text" id="update-logistical-tel" class="form-control" ng-model="logisticalData.tel" name="tel" required>
+				<span class="form-error-alert" ng-show="updateForm.tel.$invalid">
+					<span>Telephone can't be empty</span>
+				</span>
+			</div>
+		</div>
+
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Order time</label>
+			<div class="col-md-7">
+				<input type="text" id="update-logistical-time" class="form-control" ng-model="logisticalData.time" name="time" disabled>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Logistics status</label>
+			<div class="col-md-7">
+				<input type="text" id="update-logistical-status" class="form-control" ng-model="logisticalData.statusInfo" name="status" disabled>
+			</div>
+		</div>
+
+		<div class="form-group row logistical-info-outer-box">
+			<label class="col-md-3 col-form-label" >Logistics chasing</label>
+			<div class="col-md-7">
+				<p ng-show="logisticalData.status != 0 && logisticalData.logisticalInfo.length > 1">Arrived</p>
+				<p ng-show="logisticalData.status == 0">There's no information yet.</p>
+				<ul class="logistical-info-place">
+					<li ng-repeat="item in logisticalData.logisticalInfo">
+						<p ng-show="logisticalData.status === 1 && $last">Delivering to</p>
+						<input type="text" id="update-logistical-info" class="form-control" ng-model="item.content" name="info" disabled>
+						<!-- <span class="glyphicon glyphicon-remove remove-package-button" ng-click="removeFn($index)" ng-class="{'has-deliver-button': logisticalData.status === 1 && $last}"></span> -->
+					</li>
+				</ul>
+				<!-- <button class="btn btn-default">Add Logistics chasing information</button> -->
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" >Logistics destination</label>
+			<div class="col-md-7">
+				<input type="text" id="update-logistical-destination" class="form-control" ng-model="logisticalData.add" name="add" required>
+				<span class="form-error-alert" ng-show="updateForm.add.$invalid">
+					<span>Destination can't be empty</span>
+				</span>
+			</div>
+		</div>
+
+		<hr class="update-part-divider"></hr>
+		<div class="form-group row submit-part">
+			<div class="col-md-3"></div>
+			<div class="col-md-7">
+				<button class="btn btn-default pull-right" ng-click="submitFormFn()"
+				ng-disabled="updateForm.tel.$invalid || updateForm.add.$invalid || updateForm.owner.$invalid">submit</button>
+		</div>
+	</div>
+	</form>
+
+</div>

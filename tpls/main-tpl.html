@@ -1,0 +1,28 @@
+<div class="container-fluid main-box">
+	<div class="side-nav-bar" ng-controller="SideBarController">
+		<ul class="nav nav-pills nav-stacked">
+			<li ng-repeat="link in links" class="nav-item" ng-click="linkToFn(link)" ng-class="{active: activeLink == link}">
+				{{activeLink == link}}			
+				<a ng-href="#/{{link}}">{{link[0].toUpperCase() + link.substring(1)}}</a>
+			</li>
+		</ul>
+	</div>
+	<div ui-view="info-main-box" class="ng-info-box info-main-box"></div>
+	<!-- <div class="side-nav-bar">
+		<ul class="nav nav-pills nav-stacked">
+			<li class="nav-item active">
+				<a href="#">Products</a>
+			</li>
+			<li class="nav-item">
+				<a href="#">Orders</a>
+			</li>
+			<li class="nav-item">
+				<a href="#">Link</a>
+			</li>
+			<li class="nav-item">
+				<a href="#">Disabled</a>
+			</li>
+		</ul>
+	</div>
+	<div class="info-main-box "></div> -->
+</div>	

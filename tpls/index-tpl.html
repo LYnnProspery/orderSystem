@@ -1,0 +1,232 @@
+<div class="info-box">
+	<!-- <bread-nav-divider content="Home"></bread-nav-divider> -->
+	<h3>Dashboard</h3>
+
+	<div class="bread-nav-divider">
+		<a ng-href="#index" class="link-to-home"><span class="glyphicon glyphicon-dashboard"></span> Dashboard</a>
+	</div>
+
+	<div class="info-box-main-part" ng-controller="HomeController" >
+		<div class="modal fade" id="chartsModal">
+		  <div class="modal-dialog modal-lg" role="document">
+		    <div class="modal-content">
+		      <div class="modal-header">
+		        <h5 class="modal-title" style="color: #333">Select Chart</h5>
+		        <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="margin-top: -5px;">
+		          <span aria-hidden="true">&times;</span>
+		        </button>
+		      </div>
+		      <div class="modal-body" style="max-height: 600px;overflow-y:scroll">
+		       	<div class="btn-group">
+		       		 <button class="btn" ng-class="{'btn-default': currentChart != 'product'}" ng-click="toSelectChartFn('product')">Products</button>
+		       		 <button class="btn" ng-class="{'btn-default': currentChart != 'order'}" ng-click="toSelectChartFn('order')">Orders</button>
+		       		 <button class="btn" ng-class="{'btn-default': currentChart != 'logistic'}" ng-click="toSelectChartFn('logistic')">Logistics</button>
+		       	</div>
+				
+				<hr></hr>
+				<h2 ng-show="currentChart == undefined" style="font-weight: 200">Please Select A Chart</h2>
+				<div class="chart-box">
+					<button class="btn btn-default pull-right" ng-show="currentChart != undefined" ng-click="toExcelFn(currentChart)"><span class="glyphicon glyphicon-export"></span></button>
+					<table class="table table-striped" id="productToExcel" ng-show="currentChart == 'product'">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Product Name</th>
+								<th>Price</th>
+								<th>Quantity</th>
+								<th>packages</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in productsData | filter: search">
+								<td>{{$index + 1}}</td>
+								<td>{{item.name}}</td>
+								<td>{{item.price | currency:'RMB '}}</td>
+								<td>{{item.quantity}}</td>
+								<td class="no-padding-td">
+									<div class="table-cell-limit-box">
+										<p ng-repeat="package in item.packages">
+											{{$index + 1 + '. ' + package.content}}
+										</p>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="table table-striped orders-list-table" id="orderToExcel" ng-show="currentChart == 'order'"> 
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Order's owner</th>
+								<th>Total</th>
+								<th>Order information</th>
+								<th>Order Id</th>
+								<th>Time</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr ng-repeat="item in ordersList | filter: search | orderBy: orderListOrder">
+								<td>{{$index + 1}}</td>
+								<td>{{item.owner}}</td>
+								<td>{{item.total | currency:'RMB '}}</td>
+								<td class="no-padding-td" style="max-width: 400px;">
+									<div class="table-cell-limit-box">
+										<p ng-repeat="product in item.content">{{product.productName + ' * ' + product.quantity + '; &nbsp;'}}</p>
+									</div>
+								</td>
+								<td>{{item._id}}</td>
+								<td>{{item.time}}</td>
+							</tr>
+						</tbody>
+					</table>
+
+					<table class="table table-striped logistical-list-table" id="logisticToExcel" ng-show="currentChart == 'logistic'">
+						<thead>
+							<tr>
+								<th>#</th>
+								<th>Order's owner</th>
+								<th>Order ID</th>
+								<th>Owner's tel</th>
+								<th>Order time</th>
+								<th>Logistical status</th>
+							</tr>
+						</thead>
+						<tbody>
+							<!-- <tr ng-repeat="item in logisticalList.slice(currentIndex * 7, (currentIndex + 1) * 7)| filter: search"> -->
+							<tr ng-repeat="item in logisticalList | filter: search | orderBy: orderListOrder">
+								<td>{{$index + 1}}</td>
+								<td>{{item.owner}}</td>
+								<td>{{item.order_id}}</td>
+								<td>{{item.tel}}</td>
+								<td>{{item.time}}</td>
+								<td class="logistical-info-box">
+									{{item.status}}	
+								</td>
+							</tr>
+						</tbody>
+					</table>
+
+
+				</div>
+		      </div>
+		      <div class="modal-footer">
+		        <!-- <button type="button" class="btn btn-danger" ng-click="toAddFn()">Yes</button> -->
+		        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+
+
+
+
+		<div class="home-link-box" id="linkBox" >
+			<a class="home-link-item" href="/#/products" target="_self"  data-toggle="tooltip" data-placement="top" data-original-title="<p class='tips'>get products</p>" data-animation="true" data-html="true">
+
+				<span class="label">{{productsNum}}</span>
+				<span class="home-link-item-innner-circle">
+					<span class="glyphicon glyphicon-th-list not-hover"></span>
+					<span class="glyphicon glyphicon-th-list do-hover"></span>
+				</span>
+			</a>
+			<a class="home-link-item" href="/#/orders" target="_self" data-toggle="tooltip" data-placement="top" data-original-title="<p class='tips'>get orders</p>" data-animation="true" data-html="true">
+				<span class="label">{{ordersNum}}</span>
+				<span class="home-link-item-innner-circle">
+					<span class="glyphicon glyphicon-calendar not-hover"></span>
+					<span class="glyphicon glyphicon-calendar do-hover"></span>
+				</span>
+			</a>
+			<a class="home-link-item" href="/#/logistical" target="_self" data-toggle="tooltip" data-placement="top" data-original-title="<p class='tips'>get logistics</p>" data-animation="true" data-html="true">
+				<span class="label">{{logisticsNum}}</span>
+				<span class="home-link-item-innner-circle">
+					<span class="glyphicon glyphicon-plane not-hover"></span>
+					<span class="glyphicon glyphicon-plane do-hover"></span>
+				</span>
+			</a>
+			<a class="home-link-item"  data-toggle="tooltip" target="digital" data-original-title="<p class='tips'>get report forms</p>" data-animation="true" data-html="true" ng-click="showChartsModal()">
+				<span class="home-link-item-innner-circle">
+					<span class="glyphicon glyphicon glyphicon-list-alt not-hover"></span>
+					<span class="glyphicon glyphicon-indent-right do-hover"></span>
+				</span>
+			</a>
+		</div>
+
+		<div class="home-divider">
+			<span class="divider-white"><hr></hr></span>
+			<span class="divider-img"></span>
+			<span class="divider-white"><hr></hr></span>
+		</div>
+
+		<div class="charts-box">
+			<ul class="nav nav-tabs" id="dashboardNavTab">
+				<li class="nav-item active"  id="userButton">
+					<a href="#user" aria-controls="user" data-toggle="tab">User Data</a>
+				</li>
+				<li class="nav-item" id="salesButton">
+					<a href="#sales" aria-controls="salse" data-toggle="tab">Salse Data</a>
+				</li>
+				<li class="nav-item" id="logisticButton">
+					<a href="#logistics" aria-controls="logistics" data-toggle="tab">Logistic Data</a>
+				</li>
+			</ul>
+
+			<div class="tab-content">
+			    <div class="tab-pane fade in active" id="user">
+			    	<div id="userChart" style="min-width:400px;height:280px"></div>
+			    	<div class="other-info-box">
+			    		<div class="total-user-box inner-info">
+			    			<span class="glyphicon glyphicon-user"></span>
+			    			<strong>{{usersNum}}</strong>
+			    			<small>Total Users</small>
+			    		</div>
+
+			    		<div class="total-user-box inner-info">
+			    			<span class="glyphicon glyphicon-arrow-right"></span>
+			    			<strong>{{lastSixMonNumArr[5]}}</strong>
+			    			<small>new users this month</small>
+			    		</div>
+			    	</div>
+
+			    	<div id="orderChart" style="min-width:400px;height:280px"></div>
+			    	<div class="other-info-box">
+			    		<div class="total-user-box inner-info">
+			    			<span class="glyphicon glyphicon-file"></span>
+			    			<strong>{{ordersNum}}</strong>
+			    			<small>Total orders</small>
+			    		</div>
+
+			    		<div class="total-user-box inner-info">
+			    			<span class="glyphicon glyphicon-arrow-right"></span>
+			    			<strong>{{lastSixMonOrderNumArr[5]}}</strong>
+			    			<small>orders ordered this month</small>
+			    		</div>
+			    	</div>
+			    </div>
+			    <div class="tab-pane fade" id="sales">
+			    	<div id="salesChart" style="height: 400px; width: 75%;"></div>
+			    	<div class="inner-info">
+			    		<span><strong style="color: green">Best</strong> Sales Prduct: &nbsp;&nbsp;&nbsp;&nbsp;<strong>{{bestSalesProduct.name}}</strong><small>Total saled <strong>{{bestSalesProduct.num}}</strong></small></span>
+			    	</div>
+					<br />
+					<div class="inner-info">
+			    		<span><strong style="color: #b94a48">Worst</strong> Sales Prduct: &nbsp;&nbsp;&nbsp;&nbsp;<strong>{{worstSalesProduct.name}}</strong><small>Total saled <strong>{{worstSalesProduct.num}}</strong></small></span>
+			    	</div>
+					<br />
+			    	<div class="inner-info">
+			    		<span><strong style="color: green">Most</strong> Profitable Prduct: &nbsp;&nbsp;&nbsp;&nbsp;<strong>{{mostProfitableProduct.name}}</strong><small>Total income <strong>{{mostProfitableProduct.income | currency: 'RMB '}}</strong></small></span>
+			    	</div>
+					<br />
+			    	<div class="inner-info">
+			    		<span><strong style="color: #b94a48">Worst</strong> Profitable Prduct: &nbsp;&nbsp;&nbsp;&nbsp;<strong>{{worstProfitableProduct.name}}</strong><small>Total income <strong>{{worstProfitableProduct.income | currency: 'RMB '}}</strong></small></span>
+			    	</div>
+			    </div>
+			    <div class="tab-pane fade" id="logistics">
+			    	<div id="logisticsChart" style="height: 400px;margin: 20px auto auto;max-width: 700px;"></div>
+			    </div>
+		    </div>
+
+		</div>
+
+	</div>
+</div>

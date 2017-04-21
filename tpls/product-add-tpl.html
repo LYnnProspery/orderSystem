@@ -1,0 +1,86 @@
+<div class="info-box update-box" ng-controller="ProductAddController"> 
+	<add-bread-nav-divider></add-bread-nav-divider>
+
+	<update-add-form></update-add-form>
+	<!-- <form class="update-form">
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" for="update-product-name">Product Name</label>
+			<div class="col-md-7">
+				<input type="text" id="update-product-name" class="form-control" ng-model="productData.name">
+			</div>
+
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" for="update-product-price">Price</label>
+			<div class="col-md-3">
+				<input type="text" id="update-product-price" class="form-control" ng-model="productData.price">
+			</div>
+			<div class="col-md-2 rmb-tag">{{productData.price | currency: 'RMB'}}</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" for="update-product-quantity">Quantity</label>
+			<div class="col-md-3">
+				<input type="text" id="update-product-quantity" class="form-control" ng-model="productData.quantity">
+			</div>
+			<div class="col-md-6 rmb-tag">{{productData.quantity}}<span ng-show="productData.quantity != undefined"> sets of '{{productData.name}}'</span></div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" for="update-product-measurement">Measurement</label>
+			<div class="col-md-3">
+				<input type="text" id="update-product-measurement" class="form-control" ng-model="productData.measurement">
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label">Package(s)</label>
+			<div class="col-md-7 product-packages-part">
+				<div ng-repeat="item in productData.packages" class="product-packages-control-box">
+					<input  type="text" class="form-control" ng-model="item.content">
+					<span class="glyphicon glyphicon-remove remove-package-button"></span>
+				</div>
+				<button class="btn btn-default" ng-click="addPackageFn()">Add package</button>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" for="update-product-description">Description</label>
+			<div class="col-md-7">
+				<textarea id="update-product-description" class="form-control" ng-model="productData.description" rows="5"></textarea>
+			</div>
+		</div>
+		
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label" for="update-product-img">Picture Address</label>
+			<div class="col-md-7">
+				<input type="text" id="update-product-img" class="form-control" ng-model="productData.img">
+			</div>
+		</div>
+		<hr class="update-part-divider"></hr>
+		<h3>Tech Specs</h3>
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label">Size and Weight</label>
+			<div class="col-md-7 product-packages-part">
+				<div ng-repeat="item in productData.techspecs.sizeweight" class="product-packages-control-box">
+					<input  type="text"  class="form-control" ng-model="item.content">
+					<span class="glyphicon glyphicon-remove remove-package-button"></span>
+				</div>
+				<button class="btn btn-default" ng-click="addInfoFn()">Add Info</button>
+			</div>
+		</div>
+
+		<div class="form-group row">
+			<label class="col-md-3 col-form-label">In the box</label>
+			<div class="col-md-7 product-packages-part">
+				<div ng-repeat="item in productData.techspecs.inthebox" class="product-packages-control-box">
+					<input  type="text"  class="form-control" ng-model="item.content">
+					<span class="glyphicon glyphicon-remove remove-package-button"></span>
+				</div>
+				<button class="btn btn-default" ng-click="addThingsFn()">Add things</button>
+			</div>
+		</div>
+
+	</form> -->
+</div>
